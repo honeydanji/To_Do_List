@@ -4,7 +4,7 @@ import com.todoApp.todoproject.entity.Users;
 import com.todoApp.todoproject.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-@CrossOrigin(origins = { "http://localhost:3000"})
+// @CrossOrigin(origins = { "http://localhost:3000"})
 @RestController
 public class UserController {
     @Autowired
@@ -13,6 +13,7 @@ public class UserController {
     //GET
     @GetMapping("/login")
     private Users getCurrentUser(@RequestBody Users user){
+        // @RequestBody : Json형태의 데이터를 자동으로 Users 타입으로 변환해주는 역할을 한다.
         System.out.println("GET User by username and password *****");
         return userService.getUser(user);
     }
@@ -22,7 +23,6 @@ public class UserController {
         System.out.println("GET User by username and password *****");
         return userService.getUserByUsername(username, password);
     }
-
 
     //POST
     @PostMapping("/createUser")

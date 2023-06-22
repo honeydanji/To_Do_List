@@ -1,6 +1,5 @@
 package com.todoApp.todoproject.controller;
 
-
 import com.todoApp.todoproject.entity.Course;
 import com.todoApp.todoproject.service.CourseService;
 import org.slf4j.Logger;
@@ -10,9 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
 // 나는 기본 주소를 사용하겠다. = { "http://localhost:8080"}
-@CrossOrigin(origins = { "http://localhost:3000"})
+// @CrossOrigin(origins = { "http://localhost:3000"})
 @RestController // 해줘야 Mapping이 가능하다.
 public class CourseController {
 
@@ -61,12 +59,9 @@ public class CourseController {
         return courseService.updateCourse(course);
     }
 
-
     //DELETE
     @DeleteMapping("/delete/{id}") // id에 해당하는 데이터 삭제하기
     public String deleteCourse(@PathVariable int id) {
         return courseService.deleteCourse(id);
     }
-
-
 }

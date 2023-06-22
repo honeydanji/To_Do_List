@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "users")
+@Table(name = "users") // 원래는 user였지만 H2예약어라서 users로 변경했다.
 public class Users {
 
     @Id
